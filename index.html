@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            box-sizing: border-box;
+        }
+
+        .container {
+            min-height: 100vh;
+            width: 100%;
+            text-align: center;
+            background-image: url("../image/pawel-chu-unsplash.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+            display: grid;
+        }
+
+        .row {
+            width: 100%;
+            padding: 0;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            position: relative;
+            top: 0;
+            left: 0;
+            margin-top: 0;
+            z-index: 2;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar ul li {
+            list-style: none;
+        }
+
+        .navbar ul li a {
+            padding: 10px 18px;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #0056b3;
+        }
+
+        .navbar h1 {
+            color: #ffffff;
+            font-size: 35px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 10px;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .navbar h1 a:link {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        .navbar h1 a:visited {
+            color: inherit;
+        }
+
+        .navbar h1 a:active {
+            color: #0056b3;
+        }
+
+        .navbar h1:hover {
+            color: #0056b3;
+            animation: spin;
+            animation-duration: 500ms;
+            animation-iteration-count: 1;
+            animation-timing-function: linear;
+            animation-delay: 1000ms;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .content {
+            width: 100%;
+            min-height: 100vh;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .content h1 {
+            font-size: 45px;
+            color: #ffffff;
+        }
+
+        .content p {
+            font-size: 20px;
+            color: #666;
+            padding: 5px;
+        }
+
+        .cta-button {
+            text-decoration: none;
+            margin: 20px 0 100px 0;
+            font-size: 20px;
+            display: inline-block;
+            letter-spacing: 2px;
+            padding: 12px 20px;
+            background-color: #007bff;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+            animation: fade duration timing-function delay iteration-count direction fill-mode;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        .cta-button.drop-in {
+            opacity: 0;
+            transform: translateY(-50px);
+            animation: dropInAnimation 2s forwards;
+        }
+
+        @keyframes dropInAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        .typed {
+            margin: 200px 0 0 0;
+            overflow: hidden;
+            white-space: nowrap;
+            max-width: 510px;
+            border-right: 2px solid;
+            animation: typing 1.5s steps(30, end) forwards, blinking 1s infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blinking {
+            0% {
+                border-right-color: transparent;
+            }
+
+            50% {
+                border-right-color: black;
+            }
+
+            100% {
+                border-right-color: transparent;
+            }
+        }
+
+        .text-design {
+            max-width: 500px;
+            padding: 10px;
+            margin-top: 100px;
+        }
+
+        .text-design p {
+            color: #fff;
+            font-size: 30px;
+            margin: 10px 0 50px 0;
+        }
+
+        .text-design .slide {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .text-design .slide:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .text-design img {
+            width: 250px;
+            height: 200px;
+            margin-right: 20px;
+            padding: 10px;
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .slide {
+            opacity: 0;
+        }
+
+        .slide.slide-in {
+            animation: slideIn 1s ease-out;
+            animation-fill-mode: both;
+            opacity: 1;
+        }
+
+        #search-bar {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 100px;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+        }
+
+        #search-bar input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #search-bar button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #search-bar button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <nav class="navbar">
+                <h1><a href="index.html">Logo</a></h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <h1 class="typed">Start Your Job Search...</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <a href="#search-bar" class="cta-button drop-in">Get Started</a>
+            <div class="text-design">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ut libero vitae urna finibus
+                    tincidunt.
+                    Sed dignissim pharetra nisl, sed bibendum nunc. Vestibulum consectetur lacus in urna ultrices, eget
+                    semper lacus bibendum. Nullam ullamcorper leo sit amet urna finibus consequat. Fusce sit amet sem
+                    sed
+                    lorem dictum accumsan.</p>
+                <div class="slide">
+                    <img src="../image/christina-wocintechchat-com-unsplash.jpg" alt="Image 1">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="slide">
+                    <img src="../image/freestocks-unsplash.jpg" alt="Image 2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="slide">
+                    <img src="../image/markus-winkler-unsplash.jpg" alt="Image 3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+
+            <div id="search-bar">
+                <h2>Search</h2>
+                <form id="searchForm" action="https://www.google.com/search" method="get" target="_blank">
+                    <input type="text" name="q" placeholder="Enter Job Title">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        // Smooth scroll to the search bar when the "Get Started" button is clicked
+        const getStartedButton = document.querySelector(".cta-button");
+        const searchBar = document.getElementById("search-bar");
+
+        getStartedButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            searchBar.scrollIntoView({ behavior: "smooth" });
+        });
+
+        // Function to check if an element is in the viewport
+        function isInViewport(element) {
+            var rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // Function to handle the scroll event
+        function handleScroll() {
+            var slides = document.querySelectorAll('.text-design .slide');
+
+            slides.forEach(function (slide) {
+                if (isInViewport(slide) && !slide.classList.contains('slide-in')) {
+                    slide.classList.add('slide-in');
+                }
+            });
+        }
+
+        // Event listener for the scroll event
+        window.addEventListener('scroll', handleScroll);
+
+        // Initial check when the page loads
+        handleScroll();
+
+
+
+    </script>
+</body>
+
+</html>

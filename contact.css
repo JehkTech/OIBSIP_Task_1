@@ -1,0 +1,188 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: grid;
+    margin: auto;
+    background-color: #f5f5f5;
+    border-radius: 5px;
+    background-image: url("../image/kate-sade-unsplash.jpg");
+}
+
+.row {
+    width: 100%;
+    padding: 0;
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    margin-top: 0;
+    z-index: 2;
+    background: rgb(245, 245, 245, 0.2);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar ul li {
+    list-style: none;
+}
+
+.navbar ul li a {
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-size: 25px;
+    color: darkslategray;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    background-color: #0056b3;
+}
+
+.navbar h1 {
+    color: #ffffff;
+    font-size: 35px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.navbar h1 a:link {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar h1 a:visited {
+    color: inherit;
+}
+
+.navbar h1 a:active {
+    color: #0056b3;
+}
+
+.navbar h1:hover {
+    color: #0056b3;
+    animation: spin;
+    animation-duration: 500ms;
+    animation-iteration-count: 3;
+    animation-timing-function: linear;
+    animation-delay: 1000ms;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.content {
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.content h1 {
+    font-size: 45px;
+    color: rgba(1, 1, 1);
+}
+
+.typed {
+    margin: 0 0 50px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 300px;
+    border-right: 2px solid;
+    animation: typing 5s steps(30, end) forwards infinite, blinking 1s infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blinking {
+    0% {
+        border-right-color: transparent;
+    }
+
+    50% {
+        border-right-color: black;
+    }
+
+    100% {
+        border-right-color: transparent;
+    }
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
